@@ -1,7 +1,6 @@
-package model;
+package board.model.vo;
 
-public class Board {
-	
+public class BoardVo {
 //	------- -------- ------------- 
 //	IDX     NOT NULL NUMBER(6)     
 //	WRITER           VARCHAR2(20)  
@@ -41,5 +40,15 @@ public class Board {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	public BoardVo(int idx, String writer, String subject, String content) {
+		super();
+		this.idx = idx;
+		this.writer = writer;
+		this.subject = subject;
+		this.content = content;
+	}
+	public BoardVo() {
+	}
+	
 	
 }
