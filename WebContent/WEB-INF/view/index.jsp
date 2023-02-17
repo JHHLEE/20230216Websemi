@@ -14,5 +14,7 @@
 <br>
 <jsp:include page="/WEB-INF/view/boardlist.jsp"></jsp:include>
 <br>
+<button type="text" name="write">작성</button>
+
 </body>
 </html>
