@@ -9,7 +9,7 @@ import java.util.List;
 import board.model.vo.BoardVo;
 import common.JDBCTemplate;
 
-public class BoardDto {
+public class BoardDao {
 
 	public List<BoardVo> getBoardlist(Connection conn){
 		List<BoardVo> result = null;
