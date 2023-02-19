@@ -9,12 +9,19 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-<h1>커뮤니티 게시판</h1>
+<header style="position:fixed ; top:10px ; width:100% ; height : 40px;
+text-align : center; line-height : 40px";
+font-size:30px;>커뮤니티사이트</header>
+<section>
 
+
+</section>
 <br>
 <jsp:include page="/WEB-INF/view/boardlist.jsp"></jsp:include>
 <br>
-<button type="text" name="write">작성</button>
 
+<div style="border-1">
+<footer style= "position:fixed; text-align :center;">Copyright (C) 2018 정보처리산업기사 ALL Right Reserved</footer>
+</div>
 </body>
 </html>

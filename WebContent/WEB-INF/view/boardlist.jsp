@@ -8,8 +8,37 @@
    
  
   <c:forEach items="${boardlist }" var="vo">
-    	${vo.idx }<br>
+    	${vo.Idx }<br>
     </c:forEach>
+ 
     
     <hr>
+  <body>
+    <table border="1">
+        <tr>
+           <th>커뮤니티 사이트</th>
+             <tr>
+              총 #개의 게시물이 있습니다
+               <tr>
+                  <td>번호</td>
+                  <td>작성자</td>
+                  <td>제목</td>
+                  <td>작성일</td>
+               <tr>
+                  <td>(번호) </td>
+                  <td>(작성자)</td>
+                  <td>(제목)</td>
+                  <td>(작성일)</td>
+               <tr>
+               <tr>
+              <button type="text" name="write">작성</button>
+            </tr>
+              
+         </tr>
+    </table>
+</body>  
+    
+    
+    
+    
  </section>
