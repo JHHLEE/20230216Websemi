@@ -7,7 +7,9 @@
     	
    
  
- ${boardlist }
+  <c:forEach items="${boardlist }" var="vo">
+    	${vo.idx }<br>
+    </c:forEach>
     
     <hr>
  </section>

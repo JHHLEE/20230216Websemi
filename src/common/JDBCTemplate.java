@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class JDBCTemplate {
 	
@@ -29,7 +30,9 @@ public class JDBCTemplate {
 	}
 	public static void close(Connection conn) {
 		try {
+			if(conn != null && !conn.isClosed()) {
 			conn.close();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -44,9 +47,9 @@ public class JDBCTemplate {
 		}
 	}
 
-	public static void close(PreparedStatement pstmt) {
+	public static void close(Statement stmt) {
 		try {
-			pstmt.close();
+			stmt.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

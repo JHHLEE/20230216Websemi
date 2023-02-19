@@ -38,6 +38,7 @@ public class BoardDao {
 			JDBCTemplate.close(pstmt);
 			
 		}
+		System.out.println("DAO값" + result); 
 		
 		return result;
 	}
