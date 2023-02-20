@@ -12,7 +12,7 @@ import board.model.service.BoardService;
 /**
  * Servlet implementation class BoardController
  */
-@WebServlet("/Boardlist")
+@WebServlet("/boardlist")
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

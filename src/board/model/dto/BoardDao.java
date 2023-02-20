@@ -13,7 +13,7 @@ public class BoardDao {
 
 	public List<BoardVo> getBoardlist(Connection conn){
 		List<BoardVo> result = null;
-		String sql = "select WRITER,SUBJECT,CONT,REGDATE from board_tbl";
+		String sql = "select IDX,WRITER,SUBJECT,CONT,REGDATE from board_tbl";
 				
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -24,11 +24,12 @@ public class BoardDao {
 		while(rs.next()) {
 			System.out.println("vo읽기");
 			BoardVo vo = new BoardVo();
-			vo.setIdx(rs.getInt("Idx"));
-			vo.setWriter(rs.getString("Writer"));
-			vo.setCont(rs.getString("Cont"));
-			vo.setSubject(rs.getString("Subject"));
-			vo.setRegdate(rs.getTimestamp("Regdate"));
+			vo.setIdx(rs.getInt("idx"));
+			vo.setSubject(rs.getString("subject"));
+			vo.setWriter(rs.getString("writer"));
+			vo.setCont(rs.getString("cont"));
+			vo.setRegdate(rs.getTimestamp("regdate"));
+			result.add(vo);
 		}
 		
 		
