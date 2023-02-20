@@ -7,29 +7,28 @@
 <section>
     	<h1>게시글 목록</h1>
     	
-  <table>
-  	<hr>
-    	${boardlist }
-    <c:forEach items="${boardlist }" var="vo" varStatus="s">
+ <table>
+		<tr>
+			<td>글번호</td>
+			<td>작성자</td>
+			<td>제목</td>
+			<td>내용</td>
+			<td>작성일자</td>
+		</tr>
+	    <c:forEach items="${boardlist }" var="vo" varStatus="s">
+				<td>${ vo.idx }: ${s.count }: ${s.index }</td>
+				<td>${ vo.writer }</td>
+				<td>${ vo.subject }</td>
+				<td>${ vo.cont }</td>
+				<td>${ vo.regdate }</td>
+			</tr>
+	    </c:forEach>
+	</table>  
+   <hr>
+   <c:forEach items="${boardlist }" var="vo">
     	${vo.idx }<br>
-    	${vo.writer }<br>
-    	${vo.subject }<br>
-    	${vo.cont }<br>
-    	${vo.regdate }<br>
+    	${vo.Idx }<br>
     </c:forEach>
-    <c:if test="">
-    <td>&nbsp;${ vo.idx}: ${s.count }: ${s.index }</td>
-	<td>&nbsp;${ vo.writer }</td>
-	<td>&nbsp;${ vo.subject }</td>
-	<td>&nbsp;${ vo.cont }</td>
-	<td>&nbsp;${ vo.regdate }</td>
-    </c:if>
-    </table>
-    <hr>
-    
- 
-    
-    <hr>
 
 
   <body>
@@ -48,12 +47,26 @@
                   <td>${vo.subject }</td>
                   <td>${vo.regdate }</td>
                <tr>
-               <tr>
-              <button type="text" name="write">작성</button>
-            </tr>
+              </tr>
+             
              
          </tr>
+         
+         
     </table>
+    
+      <tr>
+              <button type="text" name="write" class="write">작성</button>
+              
+           <script>
+           $(".write").on("click",Write);
+           
+           function write(){
+           console.log("작성버튼 눌림");
+    		location.href="<%=request.getContextPath()%>/boardwrite";    	   
+	         }
+           
+           </script>
 
 </body> 
 
