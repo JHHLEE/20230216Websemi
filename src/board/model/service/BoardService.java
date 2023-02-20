@@ -3,7 +3,7 @@ package board.model.service;
 import java.sql.Connection;
 import java.util.List;
 
-import board.model.dto.BoardDao;
+import board.model.dao.BoardDao;
 import board.model.vo.BoardVo;
 import common.JDBCTemplate;
 

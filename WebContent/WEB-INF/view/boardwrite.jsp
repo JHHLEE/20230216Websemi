@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>footer</title>
+<title>게시글 작성</title>
 </head>
 <body>
+
+  
 
 </body>
 </html>
