@@ -28,16 +28,17 @@ public class BoardWriteController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		request.getRequestDispatcher("WEB-INF/view/boardwrite.jsp").forward(request,response);
-//	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.getRequestDispatcher("WEB-INF/view/boardwrite.jsp").forward(request,response);
+		System.out.println("board ctrl");
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/view/boardwrite.jsp").forward(request,response);
-	
+		System.out.println("board ctrl2");
 		String writer = request.getParameter("writer");
 		String subject = request.getParameter("subject");
 		String cont = request.getParameter("cont");

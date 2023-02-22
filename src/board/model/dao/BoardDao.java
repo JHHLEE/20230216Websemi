@@ -22,7 +22,7 @@ public class BoardDao {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,"writer");
 			pstmt.setString(2,"subject");
-			pstmt.setString(1,"cont");
+			pstmt.setString(3,"cont");
 			
 			result = pstmt.executeUpdate();
 			
@@ -41,7 +41,7 @@ public class BoardDao {
 	
 	public List<BoardVo> getBoardlist(Connection conn){
 		List<BoardVo> result = null;
-		String sql = "select IDX,WRITER,SUBJECT,CONT,REGDATE from board_tbl";
+		String sql = "select IDX,WRITER,SUBJECT,CONT,REGDATE from board_tbl order by idx desc";
 				
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

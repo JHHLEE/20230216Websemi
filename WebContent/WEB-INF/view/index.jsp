@@ -21,13 +21,11 @@
 <br>
 
 
-<div>
+
 <section>
-		<form action="<%=request.getContextPath()%>/boardwrite" method="post">
-			<button type="submit">글작성</button>
-		</form>
-	</section>
-</div>
+		<button type="button" class="btn write" onclick="location.href='/boardwrite';">작성</button>
+</section>
+	
 
 
 
