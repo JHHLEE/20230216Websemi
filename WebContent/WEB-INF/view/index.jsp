@@ -14,30 +14,23 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-	<header	style="position: fixed; top: 10px; width: 100%; height: 40px; text-align: center; line-height: 40px; font-size:30px;">커뮤니티사이트</header>
+	<jsp:include page="/WEB-INF/view/header.jsp"/>
 
 <br>
 		<jsp:include page="/WEB-INF/view/boardlist.jsp"></jsp:include>
 <br>
-<table>
-	<tr>
-		<th>번호</th>
-		<th>제목</th>
-		<th>아이디</th>
-		<th>조회수</th>
-		<th>작성일</th>
-	<c:forEach items="${boardlist }" var="vo" varStatus="s">
-				<td>&nbsp;${ vo.Idx }: ${s.count }: ${s.index }</td>
-				<td>${ vo.Subject }</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;${ vo.Writer }</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;${ vo.Cont }</td>
-				<td>&nbsp;&nbsp;&nbsp;&nbsp;${ vo.Regdate }</td>
-	  </c:forEach>
-</table>
 
 
-	<div >
-		<footer style="position: fixed; text-align: center;">Copyright(C) 2018 정보처리산업기사 ALL Right Reserved</footer>
-	</div>
+<div>
+<section>
+		<form action="<%=request.getContextPath()%>/boardwrite" method="post">
+			<button type="submit">글작성</button>
+		</form>
+	</section>
+</div>
+
+
+
+	<jsp:include page="/WEB-INF/view/footer.jsp"/>
 </body>
 </html>

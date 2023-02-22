@@ -20,4 +20,15 @@ public class BoardService {
 			
 		}
 	
+		public int insertBoardlist() {
+			int result = 0;
+			Connection conn = JDBCTemplate.getConnection();
+			result = new BoardDao().insertBoard(conn);
+			System.out.println("srv:"+ result);
+			JDBCTemplate.close(conn);
+			return result;
+			
+		}
+		
+		
 }

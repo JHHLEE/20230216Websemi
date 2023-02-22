@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header	style="position: fixed; top: 10px; width: 100%; height: 40px; text-align: center; line-height: 40px; font-size:30px;">커뮤니티사이트</header>
+<div style="border=1">
+<footer style= "position:fixed; text-align :center; line-height:30px">
+Copyright (C)  ALL Right Reserved</footer>
+</div>
 </body>
 </html>

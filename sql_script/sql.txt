@@ -1,0 +1,34 @@
+drop table board_tbl;
+
+CREATE TABLE BOARD_TBL(
+IDX NUMBER(6) NOT NULL PRIMARY KEY
+,WRITER VARCHAR2(20)
+,SUBJECT VARCHAR2(255)
+,CONT CLOB
+,REGDATE TIMESTAMP(1)
+);
+INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'글쓴이1','안녕','AOSㅁㄴㅇㄹIDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'글쓴이2','안녕하세','AOㅁㄴㅇㄹSIDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'유저1','안녕','AOSIㄴㅁㅇㄹDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'유저2','안','AOSIDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'글쓴이3','ㅎㅇ','AOSIDJF',SYSDATE);
+select MAX(IDX)+1 from board_tbl;
+(select MAX(IDX)+1 from board_tbl);
+
+select * from board_tbl;
+desc board_tbl;
+select IDX,WRITER,SUBJECT,CONT,REGDATE from board_tbl;
+ 
+DROP TABLE COMMENT_TBL;
+
+CREATE TABLE COMMENT_TBL(
+IDX NUMBER(6) NOT NULL PRIMARY KEY
+,BDNUM NUMBER(6)
+,WRITER VARCHAR2(20) NOT NULL
+,CONT CLOB
+,REGDATE TIMESTAMP
+);
+SELECT * FROM COMMENT_TBL;
+desc comment_tbl;
+
+select WRITER,SUBJECT,CONT,REGDATE from board_tbl;

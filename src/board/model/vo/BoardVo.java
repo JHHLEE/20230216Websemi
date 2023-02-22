@@ -11,59 +11,62 @@ public class BoardVo {
 //	CONT             CLOB          
 //	REGDATE          TIMESTAMP(1)  
 		
-	private int Idx;
-	private String Writer;
-	private String Subject;
-	private String Cont;
-	private Timestamp Regdate;
+//	private int Idx;
+//	private String Writer;
+//	private String Subject;
+//	private String Cont;
+//	private Timestamp Regdate;
+
+	private int idx;
+	private String writer;
+	private String subject;
+	private String cont;
+	private Timestamp regdate;
 	public BoardVo(int idx, String writer, String subject, String cont, Timestamp regdate) {
 		super();
-		Idx = idx;
-		Writer = writer;
-		Subject = subject;
-		Cont = cont;
-		Regdate = regdate;
+		this.idx = idx;
+		this.writer = writer;
+		this.subject = subject;
+		this.cont = cont;
+		this.regdate = regdate;
 	}
 	public BoardVo() {
 		super();
 	}
 	@Override
 	public String toString() {
-		return "BoardVo [Idx=" + Idx + ", Writer=" + Writer + ", Subject=" + Subject + ", Cont=" + Cont + ", Regdate="
-				+ Regdate + "]";
+		return "BoardVo [idx=" + idx + ", writer=" + writer + ", subject=" + subject + ", cont=" + cont + ", regdate="
+				+ regdate + "]";
 	}
 	public int getIdx() {
-		return Idx;
+		return idx;
 	}
 	public void setIdx(int idx) {
-		Idx = idx;
+		this.idx = idx;
 	}
 	public String getWriter() {
-		return Writer;
+		return writer;
 	}
 	public void setWriter(String writer) {
-		Writer = writer;
+		this.writer = writer;
 	}
 	public String getSubject() {
-		return Subject;
+		return subject;
 	}
 	public void setSubject(String subject) {
-		Subject = subject;
+		this.subject = subject;
 	}
 	public String getCont() {
-		return Cont;
+		return cont;
 	}
 	public void setCont(String cont) {
-		Cont = cont;
+		this.cont = cont;
 	}
 	public Timestamp getRegdate() {
-		return Regdate;
+		return regdate;
 	}
 	public void setRegdate(Timestamp regdate) {
-		Regdate = regdate;
+		this.regdate = regdate;
 	}
 	
-	
-
-
 }

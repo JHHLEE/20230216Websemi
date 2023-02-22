@@ -11,6 +11,33 @@ import common.JDBCTemplate;
 
 public class BoardDao {
 
+	public int insertBoard(Connection conn) {
+		int result = -1;
+		PreparedStatement pstmt = null;
+		String sql = "INSERT INTO BOARD_TBL VALUES((select MAX(idx)+1 from board_tbl),'?','?','?',SYSDATE)";
+		
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, );
+			pstmt.setString(2, );
+			pstmt.setString(3, );
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			JDBCTemplate.close(conn);
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
 	public List<BoardVo> getBoardlist(Connection conn){
 		List<BoardVo> result = null;
 		String sql = "select IDX,WRITER,SUBJECT,CONT,REGDATE from board_tbl";

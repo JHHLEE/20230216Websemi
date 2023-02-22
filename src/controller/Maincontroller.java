@@ -34,11 +34,11 @@ public class Maincontroller extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/index.jsp").forward(request,response);
-		List<BoardDao> vo = new BoardService().getBoardList());
 		request.setAttribute("boardlist", new BoardService().getBoardList());
+		request.getRequestDispatcher("WEB-INF/view/index.jsp").forward(request,response);
+		
 		System.out.println("보드리스트 보내기");
-//		System.out.println("boardlist");
+
 		
 		
 	}
