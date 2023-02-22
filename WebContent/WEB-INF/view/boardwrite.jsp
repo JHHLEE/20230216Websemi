@@ -35,7 +35,7 @@
     </tr>
    <tr>
         <td colspan="2" align="right">
-            <button type="submit" onclick="location.href='../mvcboard/list.do';">작성 완료</button>
+            <button type="submit" onclick="location.href='../semi/boardlist';">작성 완료</button>
                     
         </td>
     </tr>
