@@ -21,8 +21,7 @@
 	내용:<input type="text" name="cont">
 			<br>
 	<button type="submit">작성</button>
- 
- </form> 
+  </form> 
  
 
 </body>

@@ -41,6 +41,7 @@ public class BoardWriteController extends HttpServlet {
 		String writer = request.getParameter("writer");
 		String subject = request.getParameter("subject");
 		String cont = request.getParameter("cont");
+		
 		BoardVo wlist = new BoardVo();
 		wlist.setWriter(writer);
 		wlist.setSubject(subject);

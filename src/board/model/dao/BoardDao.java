@@ -14,14 +14,15 @@ public class BoardDao {
 	public int insertBoard(Connection conn) {
 		int result = -1;
 		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 		String sql = "INSERT INTO BOARD_TBL VALUES((select MAX(idx)+1 from board_tbl),'?','?','?',SYSDATE)";
 		
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, );
-			pstmt.setString(2, );
-			pstmt.setString(3, );
+			pstmt.setString(1,"writer");
+			pstmt.setString(2,"subject");
+			pstmt.setString(1,"cont");
 			
 			result = pstmt.executeUpdate();
 			
