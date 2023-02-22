@@ -37,25 +37,25 @@ public class BoardWriteController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/boardwrite.jsp").forward(request,response);
+		request.getRequestDispatcher("WEB-INF/view/boardlist.jsp").forward(request,response);
 		System.out.println("board ctrl2");
-		String writer = request.getParameter("writer");
-		String subject = request.getParameter("subject");
-		String cont = request.getParameter("cont");
-		
-		BoardVo wlist = new BoardVo();
-		wlist.setWriter(writer);
-		wlist.setSubject(subject);
-		wlist.setCont(cont);
+//		
 		int result = new BoardService().insertBoardlist();
 		
-		if(result < 1){
-			System.out.println("글작성실패");
-		}else{
+		if(result == 0){
 			System.out.println("글작성완료");
+		}else{
+			System.out.println("글작성실패");
 		}
 		
-		
+//		String writer = request.getParameter("writer");
+//		String subject = request.getParameter("subject");
+//		String cont = request.getParameter("cont");
+//		
+//		BoardVo wlist = new BoardVo();
+//		wlist.setWriter(writer);
+//		wlist.setSubject(subject);
+//		wlist.setCont(cont);
 		
 		
 		

@@ -12,10 +12,12 @@ import common.JDBCTemplate;
 public class BoardDao {
 
 	public int insertBoard(Connection conn) {
-		int result = -1;
+		int result = 0;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		String sql = "INSERT INTO BOARD_TBL VALUES((select MAX(idx)+1 from board_tbl),'?','?','?',SYSDATE)";
+		String sql = "INSERT INTO BOARD_TBL"
+				+ "('idx','writer','subject','cont',regdate')"
+				+ " values ( "
+				+ " seq_idx.nexval,?,?,?,sysdate)";
 		
 		
 		try {
@@ -25,13 +27,13 @@ public class BoardDao {
 			pstmt.setString(3,"cont");
 			
 			result = pstmt.executeUpdate();
-			
-			
+					
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
 			JDBCTemplate.close(conn);
 		}
+		System.out.println("DAO인서트성공?" + result);
 		return result;
 	}
 	

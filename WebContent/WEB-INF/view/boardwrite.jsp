@@ -9,18 +9,38 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
-<jsp:include page="/WEB-INF/view/header.jsp"/>
+
 	<hr>
 	<h3>게시글작성</h3>
- <form method="post" action="<%=request.getContextPath()%>/boardwrite">
- <br>
-	작성자:<input type="text" name="writer">
-			<br>
-	제목:<input type="text" name="subject">
-			<br>
-	내용:<input type="text" name="cont">
-			<br>
-	<button type="submit">작성</button>
+ <form method="post" name="write" action="<%=request.getContextPath()%>/boardlist">
+ <table border="1" width="90%">
+    <tr>
+        <td>작성자</td>
+        <td>
+            <input type="text" name="name" style="width:150px;" />
+        </td>
+    </tr>
+    <tr>
+        <td>제목</td>
+        <td>
+            <input type="text" name="subject" style="width:80%;" />
+        </td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td>
+            <textarea name="cont" style="width:80%;height:70px;"></textarea>
+        </td>
+    </tr>
+   <tr>
+        <td colspan="2" align="right">
+            <button type="submit" onclick="location.href='../mvcboard/list.do';">작성 완료</button>
+                    
+        </td>
+    </tr>
+   
+    
+</table>    
   </form> 
  
 

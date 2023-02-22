@@ -20,11 +20,20 @@
 		<jsp:include page="/WEB-INF/view/boardlist.jsp"></jsp:include>
 <br>
 
-
-
+<div>
 <section>
-		<button type="button" class="btn write" onclick="location.href='/boardwrite';">작성</button>
-</section>
+		
+        <tr align="right">
+         <td width="100"><button type="button"
+                onclick="location.href='../semi/boardwrite';">글쓰기</button></td>
+        </tr>
+  
+
+</div>
+
+<!-- <section> -->
+<!-- 		<button type="button" class="btn write" onclick="location.href='/boardwrite';">작성</button> -->
+<!-- </section> -->
 	
 
 

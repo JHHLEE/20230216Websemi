@@ -1,4 +1,5 @@
 drop table board_tbl;
+set define off;
 
 CREATE TABLE BOARD_TBL(
 IDX NUMBER(6) NOT NULL PRIMARY KEY
@@ -7,17 +8,34 @@ IDX NUMBER(6) NOT NULL PRIMARY KEY
 ,CONT CLOB
 ,REGDATE TIMESTAMP(1)
 );
-INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'글쓴이1','안녕','AOSㅁㄴㅇㄹIDJF',SYSDATE);
-INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'글쓴이2','안녕하세','AOㅁㄴㅇㄹSIDJF',SYSDATE);
-INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'유저1','안녕','AOSIㄴㅁㅇㄹDJF',SYSDATE);
-INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'유저2','안','AOSIDJF',SYSDATE);
-INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl);,'글쓴이3','ㅎㅇ','AOSIDJF',SYSDATE);
-select MAX(IDX)+1 from board_tbl;
-(select MAX(IDX)+1 from board_tbl);
+INSERT INTO BOARD_TBL VALUES(seq_idx.nextval,'글쓴이2','ㅎㅇ','AOSIDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES(seq_idx.nextval,'유저4','ㅎㅇ','ㄱㄴㄷㄻ',SYSDATE);
+INSERT INTO BOARD_TBL VALUES(seq_idx.nextval,'글쓴이','ㅎㅇ','abcdef',SYSDATE);
+INSERT INTO BOARD_TBL VALUES(seq_idx.nextval,'글쓴이567','안녕','AsdfgOSIDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES(seq_idx.nextval,'유저6','ㅎㅇㅇ','AsdfgOSIDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES(seq_idx.nextval,'유저9','안녕하세요','AsdfgOSIDJF',SYSDATE);
+INSERT INTO BOARD_TBL VALUES(seq_idx.nextval,'유저10','안녕','AsdfgOSIDJF',SYSDATE);
+--INSERT INTO BOARD_TBL VALUES(0,null,null,null,SYSDATE);
+--INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl),'글쓴이1','안녕','AOSㅁㄴㅇㄹIDJF',SYSDATE);
+--INSERT INTO BOARD_TBL VALUES((select MAX(IDX)+1 from board_tbl),'글쓴이2','안녕하세','AOㅁㄴㅇㄹSIDJF',SYSDATE);
+
+create sequence seq_idx_num increment by 1
+start with 1
+minvalue 1
+nomaxvalue
+nocycle
+nocache;
+insert into board_tbl(idx,writer,subject,cont,regdate)
+    values (seq_idx.nextval,'유저3','ㅎㅇ','ㅎㅇㅎㅇ',sysdate);
+    insert into board_tbl(idx,writer,subject,cont,regdate)
+    values (seq_idx.nextval,&writer,&subject,&cont,sysdate);
 
 select * from board_tbl;
+delete from board_tbl where cont=&cont;
+
 desc board_tbl;
-select IDX,WRITER,SUBJECT,CONT,REGDATE from board_tbl;
+select WRITER,SUBJECT,CONT,REGDATE from board_tbl order by idx desc;
+select IDX,WRITER,SUBJECT,CONT,REGDATE from board_tbl order by idx desc;
  
 DROP TABLE COMMENT_TBL;
 
