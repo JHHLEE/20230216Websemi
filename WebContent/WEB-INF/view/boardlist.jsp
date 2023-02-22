@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <section>
     <h1>게시글 목록</h1>
    
@@ -29,6 +30,24 @@
 	
 	    </c:forEach>
 	</table>  
+	<hr>
+	<c:if test="${startPageNum > 1}">
+<span>&nbsp;&nbsp;이전&nbsp;&nbsp;</span>
+</c:if>
+<c:forEach begin="${startPageNum }" end="${endPageNum }" step="1" var="page">
+<c:choose>
+	<c:when test="${page == currentPage }">
+		<span><b>&nbsp;&nbsp;${page }&nbsp;&nbsp;</b></span>
+	</c:when>
+	<c:otherwise>
+		<span><a href="<%=request.getContextPath()%>/?aaa=${page }">&nbsp;&nbsp;${page }&nbsp;&nbsp;</a></span>
+	</c:otherwise>
+</c:choose>
+
+</c:forEach>
+<c:if test="${endPageNum < pageCnt }">
+<span>&nbsp;&nbsp;다음&nbsp;&nbsp;</span>
+</c:if>
 	
 
 

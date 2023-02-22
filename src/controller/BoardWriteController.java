@@ -28,22 +28,23 @@ public class BoardWriteController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/boardwrite.jsp").forward(request,response);
-		System.out.println("board ctrl");
-	}
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		request.getRequestDispatcher("WEB-INF/view/boardwrite.jsp").forward(request,response);
+//		System.out.println("boardctrlGet");
+//	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("WEB-INF/view/boardlist.jsp").forward(request,response);
-		System.out.println("board ctrl2");
+		request.getRequestDispatcher("WEB-INF/view/boardwrite.jsp").forward(request,response);
+		System.out.println("boardctrlPost");
 //		
 		int result = new BoardService().insertBoardlist();
 		
 		if(result == 0){
 			System.out.println("글작성완료");
+			response.sendRedirect(request.getContextPath()+"/");
 		}else{
 			System.out.println("글작성실패");
 		}

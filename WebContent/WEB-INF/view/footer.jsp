@@ -8,7 +8,7 @@
 </head>
 <body>
 <div style="border=1">
-<footer style= "position:fixed; text-align :center; line-height:30px">
+<footer style= "text-align :center; line-height:30px">
 Copyright (C)  ALL Right Reserved</footer>
 </div>
 </body>

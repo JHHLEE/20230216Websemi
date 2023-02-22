@@ -12,7 +12,8 @@
 
 	<hr>
 	<h3>게시글작성</h3>
- <form method="post" name="write" action="<%=request.getContextPath()%>/boardlist">
+<%-- 	action="<%=request.getContextPath()%>/boardlist" --%>
+ <form method="post" name="write" >
  <table border="1" width="90%">
     <tr>
         <td>작성자</td>

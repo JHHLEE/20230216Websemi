@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header	style="position: fixed; top: 10px; width: 100%; height: 40px; text-align: center; line-height: 40px; font-size:30px;">게시판</header>
+<header	style="top: 10px; width: 100%; height: 40px; text-align: center; line-height: 40px; font-size:30px;">게시판</header>
 </body>
 </html>
