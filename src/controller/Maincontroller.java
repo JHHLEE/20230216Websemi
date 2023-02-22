@@ -1,11 +1,17 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import board.model.dao.BoardDao;
+import board.model.service.BoardService;
+import board.model.vo.BoardVo;
 
 /**
  * Servlet implementation class Maincontroller
@@ -22,11 +28,19 @@ public class Maincontroller extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("WEB-INF/view/index.jsp").forward(request,response);
+		List<BoardDao> vo = new BoardService().getBoardList());
+		request.setAttribute("boardlist", new BoardService().getBoardList());
+		System.out.println("보드리스트 보내기");
+//		System.out.println("boardlist");
+		
+		
 	}
 
 	

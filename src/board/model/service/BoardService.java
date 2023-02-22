@@ -15,6 +15,7 @@ public class BoardService {
 			result = new BoardDao().getBoardlist(conn);
 			System.out.println("service"+result);
 			JDBCTemplate.close(conn);
+			System.out.println(result);
 			return result;
 			
 		}

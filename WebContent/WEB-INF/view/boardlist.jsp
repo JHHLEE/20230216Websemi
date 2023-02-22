@@ -1,77 +1,69 @@
-
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
- <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <section>
-    	<h1>게시글 목록</h1>
-    	
- <table>
+    <h1>게시글 목록</h1>
+	
+	
+	<table>
 		<tr>
 			<td>글번호</td>
-			<td>작성자</td>
 			<td>제목</td>
-			<td>내용</td>
-			<td>작성일자</td>
+			<td>작성자</td>
+			<td>작성시간</td>
+			<td>조회수</td>
 		</tr>
 	    <c:forEach items="${boardlist }" var="vo" varStatus="s">
-				<td>${ vo.idx }: ${s.count }: ${s.index }</td>
-				<td>${ vo.writer }</td>
-				<td>${ vo.subject }</td>
-				<td>${ vo.cont }</td>
-				<td>${ vo.regdate }</td>
+			<%-- <c:set target="${vo }" property="boardTitle" value="aaa"/> --%>
+			<c:if test="${s.count % 2 == 1 }">
+			<tr style="{background:#ccc}">
+			</c:if>
+			<c:if test="${s.count % 2 == 0 }">
+			<tr>
+			</c:if>
+				<td>&nbsp;${ vo.Idx }: ${s.count }: ${s.index }</td>
+				<td>${ vo.Subject }</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;${ vo.Writer }</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;${ vo.Cont }</td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;${ vo.Regdate }</td>
+			</tr>
+			<tr>
+			<td>${ vo.idx }</td>
+			<td></td>
 			</tr>
 	    </c:forEach>
 	</table>  
-   <hr>
-   <c:forEach items="${boardlist }" var="vo">
-    	${vo.idx }<br>
-    	${vo.Idx }<br>
-    </c:forEach>
+	
+	<div>
+<h3>페이지처리</h3>
+<div>
 
+<c:if test="${startPageNum > 1}">
+<span>&nbsp;&nbsp;이전&nbsp;&nbsp;</span>
+</c:if>
+<c:forEach begin="${startPageNum }" end="${endPageNum }" step="1" var="page">
+<c:choose>
+	<c:when test="${page == currentPage }">
+		<span><b>&nbsp;&nbsp;${page }&nbsp;&nbsp;</b></span>
+	</c:when>
+	<c:otherwise>
+		<span><a href="<%=request.getContextPath()%>/?aaa=${page }">&nbsp;&nbsp;${page }&nbsp;&nbsp;</a></span>
+	</c:otherwise>
+</c:choose>
 
-  <body>
-    <table border="1">
-        <tr>
-              <tr>
-              총 #개의 게시물이 있습니다
-               <tr>
-                  <th>번호</th>
-                  <th>작성자</th>
-                  <th>제목</th>
-                  <th>작성일</th>
-               <tr>
-        	      <td>${vo.idx }</td>
-                  <td>${vo.writer }</td>
-                  <td>${vo.subject }</td>
-                  <td>${vo.regdate }</td>
-               <tr>
-              </tr>
-             
-             
-         </tr>
-         
-         
-    </table>
-    
-      <tr>
-              <button type="text" name="write" class="write">작성</button>
-              
-           <script>
-           $(".write").on("click",Write);
-           
-           function write(){
-           console.log("작성버튼 눌림");
-    		location.href="<%=request.getContextPath()%>/boardwrite";    	   
-	         }
-           
-           </script>
+</c:forEach>
+<c:if test="${endPageNum < pageCnt }">
+<span>&nbsp;&nbsp;다음&nbsp;&nbsp;</span>
+</c:if>
 
-</body> 
-
+<!-- request.setAttribute("startPageNum", startPageNum);
+request.setAttribute("endPageNum", endPageNum);
+request.setAttribute("currentPage", currentPage);
+request.setAttribute("pageCnt", pageCnt); -->
+</div>
+	</div>
+	
+	  
+    <hr>
+</section>
     
-    
-    
-    
- </section>

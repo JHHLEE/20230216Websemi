@@ -54,5 +54,20 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
+	public static void commit(Connection conn) {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	public static void rollback(Connection conn) {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 		
 }
