@@ -34,10 +34,9 @@
         </td>
     </tr>
    <tr>
-        <td colspan="2" align="right">
-            <button type="submit" onclick="location.href='../semi/boardwrite';">작성 완료</button>
-                    
-        </td>
+       <td colspan="2" align="right">
+          <button type="submit" onclick="location.href='../semi/boardlist';">작성 완료</button>
+	   </td>
     </tr>
    
     

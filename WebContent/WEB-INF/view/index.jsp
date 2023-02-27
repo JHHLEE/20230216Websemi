@@ -30,7 +30,7 @@
   
 
 </div>
-
+ 
 <!-- <section> -->
 <!-- 		<button type="button" class="btn write" onclick="location.href='/boardwrite';">작성</button> -->
 <!-- </section> -->
